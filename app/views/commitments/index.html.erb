@@ -1,0 +1,6 @@
+<h1>Your Commitments</h1>
+
+<%= form_for Goal.new do |f| %>
+In 30 days, I wanna <%= f.text_field :name %>
+<%= f.submit %>
+<% end %>

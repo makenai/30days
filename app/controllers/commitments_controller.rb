@@ -1,0 +1,2 @@
+class CommitmentsController < SecureController
+end

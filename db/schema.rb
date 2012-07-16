@@ -25,9 +25,12 @@ ActiveRecord::Schema.define(:version => 20120715145734) do
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "goals", ["slug"], :name => "index_goals_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

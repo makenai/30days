@@ -4,8 +4,14 @@ class Goal < ActiveRecord::Base
   validates_associated :user
   before_save :sluggify
   
+  belongs_to :user
+  
   def sluggify
-    self.slug = self.name.downcase.gsub(/\s+/,'-').gsub(/[^a-z0-9-]/,'')
+    self.slug = Goal.slug( self.name )
+  end
+  
+  def self.slug( str )
+    return str.downcase.gsub(/\s+/,'-').gsub(/[^a-z0-9-]/,'')
   end
   
 end

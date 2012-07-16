@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  
+  has_many :commitments
+  has_many :goals
+  
+  def active_commitments
+    self.commitments.where('end_date > ?', Date.today).joins(:goal).order('created_at ASC')
+  end
+  
 end

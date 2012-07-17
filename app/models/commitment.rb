@@ -1,4 +1,5 @@
 class Commitment < ActiveRecord::Base
+
   attr_accessible :end_date, :goal_id, :start_date, :user_id
   validates_presence_of :start_date, :end_date
   validates :goal, :user, :presence => true
@@ -20,9 +21,17 @@ class Commitment < ActiveRecord::Base
   def days_left
     (self.end_date - Date.today).to_i
   end
+
+  def length
+    (self.end_date - self.start_date).to_i
+  end
   
   def days
-    (self.end_date - self.start_date).to_i
+    days = []
+    (self.start_date...self.end_date).each_with_index do |date,i|
+        days << Day.new( i + 1, date )
+    end
+    return days
   end
   
 end

@@ -1,0 +1,35 @@
+body {
+	background-color: #fdfcf5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+}
+
+a {
+	text-decoration: none;
+	color: #c04800;
+}
+
+#header {
+	a {
+		color: white;
+	}
+	color: white;	
+	height: 50px;
+	line-height: 50px;
+	background-color: #00b3ac;
+	position: relative;
+	h1 {
+		position: absolute;
+		left: 15px;
+		font-size: 28px;
+		font-family: 'Cherry Cream Soda', cursive;
+		span {
+			color: #c1ecea;
+		}		
+	}
+	#right-nav {
+		position: absolute;
+		right: 15px;
+	}
+	border-bottom: 3px solid #d9cd44;
+	margin-bottom: 10px;
+}

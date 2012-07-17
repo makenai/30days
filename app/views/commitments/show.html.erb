@@ -1,2 +1,8 @@
 <h1><%= @commitment.goal.name %></h1>
 <h2><%= @commitment.days_left %> days left</h2>
+
+<div id="days">
+<% @commitment.days.each do |day| %>
+<a href="#<%= day.date %>" title="<%= day.date %>" class="day <%= day.classes %>"><%= day.number %></a>
+<% end %>
+</div>

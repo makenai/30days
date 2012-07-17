@@ -1,3 +1,27 @@
 // Place all the styles related to the Commitments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#days {
+	a.day {
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		border: 1px solid black;
+		text-align: center;
+		line-height: 30px;
+		text-decoration: none;
+		color: black;
+	}
+	a.day.today {
+		border: 1px solid #00aea7;
+		color: #00aea7;
+	}
+	a.day.future {
+		border: 1px solid #ccc;
+		color: #ccc;
+		pointer-events: none;
+		cursor: default;
+	}	
+}

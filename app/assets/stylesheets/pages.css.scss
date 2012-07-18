@@ -1,3 +1,51 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass";
+
+#first-goal {
+	color: #626262;
+	font-family: 'Cherry Cream Soda', cursive;
+	position: absolute;
+	text-align: center;
+	font-size: 36px;
+	width: 100%;
+	height: 56px;
+	top: 302px;
+	input {
+		font-family: Verdana, Arial, Helvetica, sans-serif;	
+		font-size: 28px;
+	}
+}
+
+#big-input {
+	padding: 8px;
+	border: 1px solid #cccccc;
+	width: 400px;
+	@include border-radius(5px);
+}
+
+#right-button {
+	width: 46px;
+	height: 46px;
+	border: none;
+	background-color: transparent;
+	@include replace-text('right-button.png');
+}
+
+#inspiration {
+	margin: auto;
+	max-width: 1200px;
+	height: 600px;
+	overflow: hidden;
+	color: #ebeae5;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 36px;
+	line-height: 50px;
+	word-break: break-all;
+	i {
+		font-style: normal;
+		color: #f4f2ed;
+	}
+}

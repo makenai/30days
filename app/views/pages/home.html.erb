@@ -1,1 +1,16 @@
-Hello
+<div id="first-goal">
+<%= form_for Goal.new( :name => '3D print a ring' ) do |f| %>
+	In 30 days, I wanna <%= f.text_field :name, :id => 'big-input' %>
+	<%= f.submit 'Create', :id => 'right-button' %>
+<% end %>
+</div>
+
+<div id="inspiration">
+<% @inspiration.each_with_index do |inspiration,i| %>
+	<% if i % 2 == 0 %>
+		<i><%= inspiration %></i>
+	<% else %>
+		<%= inspiration %>
+	<% end %>
+<% end %>
+</div>

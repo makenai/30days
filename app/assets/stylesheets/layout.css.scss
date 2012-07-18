@@ -35,6 +35,13 @@ a {
 		position: absolute;
 		right: 15px;
 	}
-	border-bottom: 3px solid #d9cd44;
-	margin-bottom: 10px;
+	border-bottom: 4px solid #d9cd44;
+}
+
+#footer {
+	background-color: #d9cd44;
+	padding: 10px 15px;
+	a {
+		color: white;
+	}	
 }

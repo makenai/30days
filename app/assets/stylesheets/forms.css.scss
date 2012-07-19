@@ -1,0 +1,30 @@
+@import "compass";
+
+input {
+	padding: 8px;
+	border: 1px solid #cccccc;
+	@include border-radius(5px);
+	font-size: 14px;
+}
+
+label {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display: inline-block;
+	font-size: 14px;
+}
+
+.btn {
+	margin: 10px 0;
+	font-family: 'Cherry Cream Soda', cursive;
+	color: white;
+	font-size: 16px;
+	padding: 5px 20px;
+	line-height: 25px;
+	@include background(
+		linear-gradient(top, #d05d17, #d46e31 50%, #cc3300)
+	);
+	@include border-radius(5px);
+	font-weight: normal;
+	border: none;
+}

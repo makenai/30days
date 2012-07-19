@@ -1,17 +1,34 @@
-<h2>Sign in</h2>
+<div id="login-options">
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+	<div id="sso">
+		Connect with Facebook
+		Something Something
+	</div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	<div id="or">
+		<i>-</i><br />
+		or<br />
+		<i>-</i>
+	</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+	<div id="login">
+		<h2>login</h2>
+		<%= link_to raw("wait&hellip;i need to register"), new_registration_path(resource_name) %>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		  <div><%= f.label :email %><br />
+		  <%= f.email_field :email, :placeholder => 'name@somethingruther.com' %></div>
 
-<%= render :partial => "devise/shared/links" %>
+		  <div><%= f.label :password %><br />
+		  <%= f.password_field :password %></div>
+
+		  <% if devise_mapping.rememberable? -%>
+		    <!-- <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div> -->
+		  <% end -%>
+		  <div><%= f.submit "login", :class => 'btn' %></div>
+		  <%= link_to raw("err&hellip;i forgot my password"), new_password_path(resource_name) %>
+
+		<% end %>
+	</div>
+
+</div>

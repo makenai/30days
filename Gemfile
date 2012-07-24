@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'compass-rails'
 gem 'devise'
 gem 'kaminari'
+gem "watu_table_builder", :require => "table_builder"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

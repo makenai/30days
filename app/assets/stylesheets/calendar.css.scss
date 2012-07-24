@@ -1,0 +1,52 @@
+@import "compass";
+@import "reset";
+
+// background-color: #d9cd44;
+
+#calendar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 568px;
+	padding-bottom: 5px;
+	background-color: #d9cd44;
+	@include border-radius(5px);
+	.month {
+		text-align: center;
+		font-family: 'Cherry Cream Soda', cursive;
+		font-size: 26px;
+		line-height: 40px;
+		color: white;		
+	}
+	table {
+		background-color: white;
+		margin: auto;
+		border-bottom: 4px solid #cbc041;
+		font-size: 14px;
+	}
+	thead tr {
+		background-color: #cbc041;
+		border-left: 4px solid #cbc041;
+		border-right: 4px solid #cbc041;
+	}
+	th {
+		text-align: center;
+		color: white;
+		padding: 8px;
+	}
+	td {
+		vertical-align: top;
+		text-align: right;
+		background-color: #f7f5d0;
+		border: 4px solid white;
+		width: 65px;
+		height: 65px;
+		padding: 5px;
+		color: #d1c541;
+		@include border-radius(10px);
+	}
+	td.notmonth {
+		color: #d1cda0;
+	}
+
+}

@@ -1,8 +1,5 @@
 <div id="first-goal">
-<%= form_for Goal.new( :name => '3D print a ring' ) do |f| %>
-	In 30 days, I wanna <%= f.text_field :name, :id => 'big-input' %>
-	<%= f.submit 'Create', :id => 'right-button' %>
-<% end %>
+	<%= render :partial => 'goals/form' %>
 </div>
 
 <div id="inspiration">

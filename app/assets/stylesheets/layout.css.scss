@@ -28,7 +28,6 @@ h2 {
 	@include background(
 		linear-gradient(top, #00b3ac, #00b3ac 49%, #00aea7 50%, #00aea7)
 	);
-	position: relative;
 	h1 {
 		position: absolute;
 		left: 15px;
@@ -42,8 +41,20 @@ h2 {
 		position: absolute;
 		right: 15px;
 	}
-	border-bottom: 4px solid #d9cd44;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1001;
 }
+
+#content {
+	width: 1024px;
+	min-height: 500px;
+	margin: auto;
+	margin-top: 30px;
+	position: relative;
+}
+
 
 #footer {
 	background-color: #d9cd44;

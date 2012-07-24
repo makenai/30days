@@ -1,12 +1,36 @@
-<%= form_for Goal.new( :name => 'skin a cat' ) do |f| %>
-In 30 days, I wanna <%= f.text_field :name %>
-<%= f.submit %>
-<% end %>
+<div id="new-goal">
+	<%= render :partial => 'goals/form' %>
+  <div id="goal-tab">Add a New Goal</div>
+</div>
+
+<div id="content">
 
 <h1>Your Goals</h1>
+
+<%= image_tag avatar %>
 
 <ul>
 <% @commitments.each do |commitment| %>
   <li><%= link_to commitment.goal.name, commitment %> - day <%= commitment.current_day %></li>
 <% end %>
 </ul>
+
+<div id="calendar">
+<div class="month">
+  <%= @date.strftime('%B %Y') %>
+</div>
+<%= calendar_for @check_ins, :year => @date.year, :month => @date.month do |calendar| %>
+  <%= calendar.head('Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat') %>
+  <%= calendar.day(:day_method => :start_time) do |date, events| %>
+    <%= date.day %>     
+    <% events.each do |event| %>
+      <div class="event">
+        <div class="time"><%= event.starts_at.strftime('%I:%M%p') %> - <%= event.ends_at.strftime('%I:%M%p') %></div>
+        <%= link_to event.name.truncate(25), event %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
+</div>

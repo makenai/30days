@@ -1,3 +1,37 @@
 // Place all the styles related to the Goals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass";
+
+
+.new_goal {
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 36px;
+	input {
+		font-family: Verdana, Arial, Helvetica, sans-serif;	
+		font-size: 28px;
+	}
+}
+
+#new-goal {
+	background-color: #d9cd44;
+	text-align: center;
+	color: white;
+	height: 70px;
+	width: 100%;
+	line-height: 60px;
+	position: relative;
+	top: -16px;
+	z-index: 1000;
+}
+
+#goal-tab {
+	background-color: #d9cd44;
+	line-height: 25px;
+	width: 200px;
+	margin: auto;
+	margin-top: 8px;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 16px;
+	@include border-bottom-radius(10px);
+}

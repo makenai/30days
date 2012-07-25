@@ -28,3 +28,10 @@ label {
 	font-weight: normal;
 	border: none;
 }
+
+hr {
+	border: none;
+	height: 5px;
+	margin: 15px 0;
+	background-image: image-url('dot.png');
+}

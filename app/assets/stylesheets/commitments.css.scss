@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "compass";
 
 #days {
 	a.day {
@@ -24,4 +25,71 @@
 		pointer-events: none;
 		cursor: default;
 	}	
+}
+
+#user {
+	height: 100px;
+	img.avatar {
+		width: 80px;
+		height: 80px;
+		margin-right: 20px;
+		border: 1px solid #cccccc;
+		float: left;
+	}
+	h2 {
+		color: #13ada7;
+		margin-top: 3px;
+		margin-bottom: 5px;
+	}
+	h3 {
+		display: block;
+	}
+	.ribbon {
+		display: block;
+		float: left;
+		margin-right: 5px;
+	}
+
+}
+
+.ribbon {
+	width: 30px;
+	height: 35px;
+	background: image-url('ribbon.png') no-repeat;
+	display: inline-block;
+	position: relative;
+	line-height: 30px;
+	text-align: center;
+	padding-right: 8px;
+	color: white;
+	font-family: 'Cherry Cream Soda', cursive;
+}
+
+.hint {
+	font-size: 12px;
+	font-style: italic;
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	color: #bab8b8;
+}
+
+#my-commitments > a {
+	line-height: 34px;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 22px;
+	display: block;
+}
+
+i.icon {
+	@include border-radius(5px);
+	background-color: #d9cd44;
+	width: 34px;
+	height: 34px;
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.no-avatar {
+	vertical-align: middle;
+	margin-right: 10px;
 }

@@ -1,36 +1,44 @@
 <div id="new-goal">
 	<%= render :partial => 'goals/form' %>
-  <div id="goal-tab">Add a New Goal</div>
+  <div id="goal-tab">
+    <a href="#" id="open-tab">Add a New Goal</a>
+    <a href="#" id="close-tab">Close</a>
+  </div>
 </div>
 
 <div id="content">
 
-<h1>Your Goals</h1>
+<div id="main">
 
-<%= image_tag avatar %>
+	<div id="user">
+		<%= image_tag avatar, :class => 'avatar' %>
+		<h2>Your Goals</h2>
+		<div id="score">
+			<div class="ribbon">1</div>
+			<h3>Lil' Winner</h3>
+			<span class="hint">(just 4 more goals to level up!)</span>
+		</div>
+	</div>
 
-<ul>
-<% @commitments.each do |commitment| %>
-  <li><%= link_to commitment.goal.name, commitment %> - day <%= commitment.current_day %></li>
-<% end %>
-</ul>
+	<div id="my-commitments">
+	<% @commitments.each do |commitment| %>
+		<%= link_to commitment do %>
+			<i class="icon"></i>
+			<%= commitment.goal.name %>
+			<span class="hint">(day <%= commitment.current_day %>)</span>
+		<% end %>
+	<% end %>
+	</div>
+
+	<hr />
+
+	<%= image_tag 'no-avatar.png', :class => 'no-avatar' %>
+	<%= link_to 'Find Friends', '#', :class => 'btn' %>
+
+</div>
 
 <div id="calendar">
-<div class="month">
-  <%= @date.strftime('%B %Y') %>
-</div>
-<%= calendar_for @check_ins, :year => @date.year, :month => @date.month do |calendar| %>
-  <%= calendar.head('Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat') %>
-  <%= calendar.day(:day_method => :start_time) do |date, events| %>
-    <%= date.day %>     
-    <% events.each do |event| %>
-      <div class="event">
-        <div class="time"><%= event.starts_at.strftime('%I:%M%p') %> - <%= event.ends_at.strftime('%I:%M%p') %></div>
-        <%= link_to event.name.truncate(25), event %>
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
+	<%= render :partial => 'calendar', :locals => { :date => @date, :check_ins => @check_ins } %>
 </div>
 
 </div>

@@ -3,11 +3,13 @@
 </div>
 
 <div id="inspiration">
+<% 3.times do %>
 <% @inspiration.each_with_index do |inspiration,i| %>
 	<% if i % 2 == 0 %>
 		<i><%= inspiration %></i>
 	<% else %>
 		<%= inspiration %>
 	<% end %>
+<% end %>
 <% end %>
 </div>

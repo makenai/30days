@@ -1,0 +1,17 @@
+<div class="month">
+  <%= link_to "<", { :month => (date.beginning_of_month-1).strftime("%Y-%m") }, :id => 'prev-month' %>
+  <%= date.strftime('%B %Y') %>
+  <%= link_to ">", { :month => (date.end_of_month+1).strftime("%Y-%m") }, :id => 'next-month' %>  
+</div>
+<%= calendar_for check_ins, :year => date.year, :month => date.month do |calendar| %>
+  <%= calendar.head('Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat') %>
+  <%= calendar.day(:day_method => :start_time) do |date, events| %>
+    <%= date.day %>     
+    <% events.each do |event| %>
+      <div class="event">
+        <div class="time"><%= event.starts_at.strftime('%I:%M%p') %> - <%= event.ends_at.strftime('%I:%M%p') %></div>
+        <%= link_to event.name.truncate(25), event %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

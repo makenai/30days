@@ -48,5 +48,22 @@
 	td.notmonth {
 		color: #d1cda0;
 	}
+}
 
+#prev-month, #next-month {
+	display: block;
+	position: absolute;
+	width: 23px;
+	height: 23px;
+	top: 10px;
+}
+
+#prev-month {
+	@include replace-text('left-arrow.png');
+	left: 120px;
+}
+
+#next-month {
+	@include replace-text('right-arrow.png');
+	right: 120px;
 }

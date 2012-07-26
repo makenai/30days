@@ -11,10 +11,23 @@
 }
 
 #sso {
-	width: 370px;
-	margin-top: 180px;
-	padding-right: 80px;
+	width: 400px;
+	margin-top: 210px;
 	float: left;
+	text-align: center;
+	padding-left: 50px;
+}
+
+#facebook-connect {
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	@include replace-text('fb-connect.png');
+	margin-bottom: 10px;
+}
+
+#facepile {
+	margin-top: 50px;
 }
 
 #or {
@@ -37,8 +50,8 @@
 }
 
 #login {
-	width: 370px;
+	width: 410px;
 	float: left;
-	padding-left: 80px;
+	padding-left: 40px;
 	margin-top: 180px;
 }

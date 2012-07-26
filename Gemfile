@@ -28,6 +28,9 @@ end
 gem 'jquery-rails'
 gem 'compass-rails'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'oauth2'
 gem 'kaminari'
 gem "watu_table_builder", :require => "table_builder"
 

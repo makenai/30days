@@ -44,6 +44,10 @@
 	#close-tab { display: none; }
 }
 
+#goal-tab:hover {
+	margin-top: 10px;
+}
+
 #open-tab {
 	display: block;
 	background: image-url('expand.png') no-repeat right center;

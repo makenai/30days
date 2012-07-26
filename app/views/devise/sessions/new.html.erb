@@ -1,8 +1,9 @@
 <div id="login-options">
 
 	<div id="sso">
-		Connect with Facebook
-		Something Something
+		<%= link_to 'Login with Facebook', '/auth/facebook', :id => 'facebook-connect' %>
+		<div class="hint">(we won't post anything without your permission)</div>
+		<iframe id="facepile" src="http://www.facebook.com/plugins/facepile.php?app_id=339158919498974" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px;" allowTransparency="true"></iframe> 
 	</div>
 
 	<div id="or">

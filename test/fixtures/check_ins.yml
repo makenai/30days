@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  commitment_id: 1
+  day: 1
+  checkin_date: 2012-08-03
+  note: MyText
+
+two:
+  commitment_id: 1
+  day: 1
+  checkin_date: 2012-08-03
+  note: MyText

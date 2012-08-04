@@ -1,6 +1,8 @@
 ThirtyDays::Application.routes.draw do
 
-  resources :commitments
+  resources :commitments do
+    resources :check_ins
+  end
   resources :goals
   devise_for :users
 

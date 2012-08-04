@@ -6,6 +6,7 @@ class Commitment < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :goal
+  has_many :check_ins
   
   before_validation :set_dates
   
@@ -28,10 +29,10 @@ class Commitment < ActiveRecord::Base
   
   def days
     days = []
-    (self.start_date...self.end_date).each_with_index do |date,i|
+    (self.start_date..Date.today).each_with_index do |date,i|
         days << Day.new( i + 1, date )
     end
-    return days
+    return days.reverse
   end
   
 end

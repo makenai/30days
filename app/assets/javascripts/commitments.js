@@ -22,4 +22,14 @@ $(function() {
 		$('#calendar').load( this.getAttribute('href') );
 	});
 
+	$('#days').on('click', 'a.day', function(e) {
+		e.preventDefault();
+		$('#days div.active').removeClass('active');
+		$(this).closest('div').addClass('active');
+		var data = $(this).data();
+		$('#check-in-form').animate( { top: ((data.position * 34) - 1 )+ 'px' }, 200 );
+		$('#check_in_checkin_date').val( data.date );
+		$('#check_in_note').attr( 'placeholder', 'What did you do to progess on day ' + data.number + '?' );
+	});
+
 });

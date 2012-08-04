@@ -1,8 +1,33 @@
-<h1><%= @commitment.goal.name %></h1>
-<h2><%= @commitment.days_left %> days left</h2>
+<%= render :partial => 'goals/tab' %>
 
-<div id="days">
-<% @commitment.days.each do |day| %>
-<a href="#<%= day.date %>" title="<%= day.date %>" class="day <%= day.classes %>"><%= day.number %></a>
-<% end %>
+<div id="content">
+
+	<h1><i class="icon"></i> <%= @commitment.goal.name %></h1>
+	
+	<div id="days">
+		<% @commitment.days.each_with_index do |day,i| %>
+		<div<% if day.today? %> class="active"<% end %>>
+			<a href="#day<%= day.number %>" 
+				title="<%= day.date %>" 
+				data-date="<%= day.date %>"
+				data-number="<%= day.number %>"
+				data-position="<%= i %>"
+				class="day <%= day.classes %>"><%= day.number %></a>
+		</div>
+		<% end %>
+		<div id="check-in-form">
+			<%= form_for( [ @commitment, CheckIn.new( :checkin_date => @commitment.days.first.date ) ] ) do |f| %>
+				<%= f.text_field :note, :placeholder => "What did you do to progress on day #{@commitment.days.first.number}?" %>
+				<%= f.hidden_field :checkin_date %>
+				<%= f.submit 'Check In', :class => 'btn' %>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="social">
+		<h2><%= @commitment.days_left %> days left</h2>
+	</div>
+
+	<div class="cleared">&nbsp;</div>
+
 </div>

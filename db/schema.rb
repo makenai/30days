@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726065858) do
+ActiveRecord::Schema.define(:version => 20120803144024) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20120726065858) do
     t.string   "token"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "check_ins", :force => true do |t|
+    t.integer  "commitment_id"
+    t.integer  "day"
+    t.date     "checkin_date"
+    t.text     "note"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "commitments", :force => true do |t|
@@ -40,6 +49,15 @@ ActiveRecord::Schema.define(:version => 20120726065858) do
   end
 
   add_index "goals", ["slug"], :name => "index_goals_on_slug", :unique => true
+
+  create_table "icons", :force => true do |t|
+    t.string   "name"
+    t.string   "attribution"
+    t.string   "url"
+    t.string   "filename"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

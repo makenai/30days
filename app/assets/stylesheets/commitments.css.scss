@@ -5,26 +5,59 @@
 @import "compass";
 
 #days {
+	position: relative;
+	float: left;
+	width: 550px;
+	div.active {
+		a.day {
+			height: 60px;
+			width: 60px;
+			line-height: 60px;
+			font-size: 36px;
+		}
+	}
 	a.day {
+		background-color: #13ada7;
+		color: #88d6d3;
 		width: 30px;
 		height: 30px;
 		display: inline-block;
-		border: 1px solid black;
 		text-align: center;
-		line-height: 30px;
 		text-decoration: none;
-		color: black;
+		line-height: 30px;
+		margin: 2px;
 	}
 	a.day.today {
-		border: 1px solid #00aea7;
-		color: #00aea7;
+		background-color: #d26421;
+		color: #e9b190;
 	}
-	a.day.future {
-		border: 1px solid #ccc;
-		color: #ccc;
-		pointer-events: none;
-		cursor: default;
+	a.day.empty {
+		color: white;
+		background-color: #ccc;
 	}	
+}
+
+#check-in-form {
+	background-color: #d26421;
+	padding: 5px 15px;
+	position: absolute;
+	width: 440px;
+	right: 0;
+	top: 0;
+	#check_in_note { 
+		width: 315px;
+	}
+	.btn {
+		border: 1px solid #e38c58;
+	}
+}
+
+#social {
+	float: right;
+	min-height: 425px;
+	width: 425px;
+	background: image-url('dot.png') repeat-y;
+	padding-left: 25px;
 }
 
 #user {
@@ -49,7 +82,6 @@
 		float: left;
 		margin-right: 5px;
 	}
-
 }
 
 .ribbon {

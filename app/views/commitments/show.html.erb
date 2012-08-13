@@ -2,7 +2,7 @@
 
 <div id="content">
 
-	<h1><i class="icon"></i> <%= @commitment.goal.name %></h1>
+	<h1><i class="icon heart-219"></i> <%= @commitment.goal.name %></h1>
 	
 	<div id="days" data-commitment-id="<%= @commitment.id %>">
 		<%= render :collection => @commitment.days, :partial => 'day' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803144024) do
+ActiveRecord::Schema.define(:version => 20120813062250) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -54,10 +54,14 @@ ActiveRecord::Schema.define(:version => 20120803144024) do
     t.string   "name"
     t.string   "attribution"
     t.string   "url"
-    t.string   "filename"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "license"
+    t.string   "source"
+    t.string   "tags"
   end
+
+  add_index "icons", ["name"], :name => "index_icons_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

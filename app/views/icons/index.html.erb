@@ -1,0 +1,15 @@
+<%= render :partial => 'goals/tab' %>
+
+<div id="content">
+
+	<% @icons.each do |icon| %>
+	<div>
+		<i class="icon <%= icon.name %>"></i> &nbsp; <i class="icon small <%= icon.name %>"></i>
+		<br />
+		<%= link_to icon.name, icon.url %><br />
+		<%= icon.attribution %>
+		<hr />
+	</div>
+	<% end %>
+
+</div>

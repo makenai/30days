@@ -4,6 +4,7 @@ ThirtyDays::Application.routes.draw do
     resources :check_ins
   end
   resources :goals
+  resources :icons
   devise_for :users
 
   match '/home' => 'commitments#index', :as => 'user_root'

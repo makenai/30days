@@ -1,3 +1,4 @@
 class Icon < ActiveRecord::Base
-  attr_accessible :attribution, :filename, :name, :url
+  attr_accessible  :name, :license, :source, :url, :attribution, :tags
+  validates :name, :uniqueness => true
 end

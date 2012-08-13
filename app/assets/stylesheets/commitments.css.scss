@@ -139,11 +139,16 @@
 i.icon {
 	@include border-radius(5px);
 	background-color: #d9cd44;
-	width: 34px;
-	height: 34px;
+	width: 36px;
+	height: 36px;
 	margin-right: 5px;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+i.icon.small {
+	width: 18px;
+	height: 18px;
 }
 
 .no-avatar {

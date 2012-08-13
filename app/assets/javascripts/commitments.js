@@ -22,14 +22,41 @@ $(function() {
 		$('#calendar').load( this.getAttribute('href') );
 	});
 
-	$('#days').on('click', 'a.day', function(e) {
+	$('#new_check_in').submit(function(e) {
+		e.preventDefault();
+		var data = $(this).serialize();
+		$.post( $(this).attr('action'), data, function( html ) {
+			$('#days div.active').replaceWith( html );
+			$('#days div.row:first').click();
+		}).error( function( response ) {
+			alert( response.responseText );
+			$('#check_in_note').focus();
+		});
+	});
+
+	$('#days').on('click', 'div.row', function(e) {
+		var $row = $(this),
+			data = $row.data(),
+			note = $row.find('span.note')[0],
+			position = $(this).prevAll().length,
+			commitment_id = $('#days').data('commitment-id');
 		e.preventDefault();
 		$('#days div.active').removeClass('active');
-		$(this).closest('div').addClass('active');
-		var data = $(this).data();
-		$('#check-in-form').animate( { top: ((data.position * 34) - 1 )+ 'px' }, 200 );
+		$row.addClass('active');
+		$('#check-in-form').animate( { top: ( position * 34 ) + 'px' }, 200 );
 		$('#check_in_checkin_date').val( data.date );
 		$('#check_in_note').attr( 'placeholder', 'What did you do to progess on day ' + data.number + '?' );
+		var note_id = $(note).data('id');
+		if ( note_id ) {
+			$('#check_in_note').val( $(note).text() );
+			$('#check-in-button').val('Update');
+		} else {
+			$('#check_in_note').val('');
+			$('#check-in-button').val('Check In');
+		}
+		$('#check_in_note').focus();
 	});
+
+	$('#check_in_note').focus();
 
 });

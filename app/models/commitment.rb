@@ -29,8 +29,12 @@ class Commitment < ActiveRecord::Base
   
   def days
     days = []
+    checkins = {}
+    self.check_ins.each do |c|
+      ( checkins[ c.checkin_date ] ||= [] ) << c
+    end
     (self.start_date..Date.today).each_with_index do |date,i|
-        days << Day.new( i + 1, date )
+        days << Day.new( i + 1, date, checkins[ date ] )
     end
     return days.reverse
   end

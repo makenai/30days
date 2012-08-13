@@ -8,17 +8,18 @@
 	position: relative;
 	float: left;
 	width: 550px;
-	div.active {
-		a.day {
-			height: 60px;
-			width: 60px;
-			line-height: 60px;
-			font-size: 36px;
-		}
+	div.row {
+		cursor: pointer;
 	}
+	div.row:hover {
+		span.note {
+			padding-right: 18px;
+			background: image-url('edit.png') right no-repeat;
+		}
+	};
 	a.day {
-		background-color: #13ada7;
-		color: #88d6d3;
+		color: white;
+		background-color: #ccc;
 		width: 30px;
 		height: 30px;
 		display: inline-block;
@@ -27,28 +28,52 @@
 		line-height: 30px;
 		margin: 2px;
 	}
-	a.day.today {
+	.active {
+		a.day {
+			height: 60px;
+			width: 60px;
+			line-height: 60px;
+			font-size: 36px;
+		}
+		span { display: none; }
+	}
+	.today a.day {
 		background-color: #d26421;
 		color: #e9b190;
 	}
-	a.day.empty {
-		color: white;
-		background-color: #ccc;
+	.checked-in a.day {
+		color: #88d6d3;
+		background-color: #13ada7;
 	}	
 }
 
 #check-in-form {
-	background-color: #d26421;
-	padding: 5px 15px;
+	background-color: #edb194;
+	height: 56px;
+	padding: 2px 8px;
+	margin-top: 2px;
 	position: absolute;
-	width: 440px;
+	width: 455px;
 	right: 0;
 	top: 0;
+	text-align: center;
 	#check_in_note { 
-		width: 295px;
+		outline: none;
+		width: 315px;
+		padding: 12px 5px;
+		@include border-radius(0);
 	}
 	.btn {
 		border: 1px solid #e38c58;
+	}
+	i.tip {
+		display: block;
+		width: 10px;
+		height: 21px;
+		background: image-url('tip_salmon.png') no-repeat;
+		position: absolute;
+		top: 20px;
+		left: -10px;
 	}
 }
 
@@ -123,5 +148,7 @@ i.icon {
 
 .no-avatar {
 	vertical-align: middle;
+	width: 52px;
+	height: 52px;
 	margin-right: 10px;
 }

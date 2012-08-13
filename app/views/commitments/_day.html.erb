@@ -1,0 +1,10 @@
+<div class="row <%= day.classes %>" id="day<%= day.number %>"
+	data-date="<%= day.date %>"
+	data-number="<%= day.number %>">
+	<a href="#day<%= day.number %>" class="day" title="<%= day.date %>"><%= day.number %></a>
+	<% if day.checkin.present? %>
+		<span class="note" data-id="<%= day.checkin.id %>"><%= day.checkin.note %></span>
+	<% else %>
+		<span class="note"></span>
+	<% end %>
+</div>

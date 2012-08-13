@@ -4,22 +4,14 @@
 
 	<h1><i class="icon"></i> <%= @commitment.goal.name %></h1>
 	
-	<div id="days">
-		<% @commitment.days.each_with_index do |day,i| %>
-		<div<% if day.today? %> class="active"<% end %>>
-			<a href="#day<%= day.number %>" 
-				title="<%= day.date %>" 
-				data-date="<%= day.date %>"
-				data-number="<%= day.number %>"
-				data-position="<%= i %>"
-				class="day <%= day.classes %>"><%= day.number %></a>
-		</div>
-		<% end %>
+	<div id="days" data-commitment-id="<%= @commitment.id %>">
+		<%= render :collection => @commitment.days, :partial => 'day' %>
 		<div id="check-in-form">
+			<i class="tip"></i>
 			<%= form_for( [ @commitment, CheckIn.new( :checkin_date => @commitment.days.first.date ) ] ) do |f| %>
 				<%= f.text_field :note, :placeholder => "What did you do to progress on day #{@commitment.days.first.number}?" %>
 				<%= f.hidden_field :checkin_date %>
-				<%= f.submit 'Check In', :class => 'btn' %>
+				<%= f.submit 'Check In', :class => 'btn', :id => 'check-in-button' %>
 			<% end %>
 		</div>
 	</div>

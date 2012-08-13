@@ -7,7 +7,6 @@ gem 'rails', '3.2.3'
 
 group :development do
   gem 'sqlite3'
-  gem 'nokogiri'
 end
 
 group :production do
@@ -34,6 +33,7 @@ gem 'omniauth-facebook'
 gem 'oauth2'
 gem 'kaminari'
 gem "watu_table_builder", :require => "table_builder"
+gem 'nokogiri'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
